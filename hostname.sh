@@ -1,1 +1,1 @@
-echo <%= @attributes.hostname %> > /etc/hostname
+echo $(cat attributes/hostname) > /etc/hostname
