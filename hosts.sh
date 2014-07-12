@@ -3,7 +3,7 @@ public_domain=$(cat attributes/public_domain)
 hostname=$(cat attributes/hostname)
 
 # Setup hosts
-cat>/etc/hosts <<'EOT'
+cat>/etc/hosts <<EOT
 127.0.0.1 localhost.localdomain localhost
 ${public_ip} ${public_domain} ${hostname}
 
