@@ -12,7 +12,7 @@ iface eth0 inet static
 
 iface eth0:0 inet static
  address <%= @attributes.private_ip %>
- netmask <%= @attributes.private_netmask %>
+ netmask <%= @attributes.private_netmask || '255.255.128.0' %>
 EOT
 
 /etc/init.d/networking restart
