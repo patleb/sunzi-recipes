@@ -1,5 +1,5 @@
-if gem list | grep -q bundler; then
-  echo 'bundler already installed, skipping.'
+if gem list | grep -q thin; then
+  echo 'thin already installed, skipping.'
 else  
   gem install thin
 
