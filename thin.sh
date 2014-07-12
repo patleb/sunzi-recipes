@@ -2,6 +2,7 @@ if gem list | grep -q thin; then
   echo 'thin already installed, skipping.'
 else  
   gem install thin
+  rbenv rehash
 
   # Setup thin to start on reboot
   thin install
