@@ -18,5 +18,3 @@ iface eth0:0 inet static
  address ${private_ip}
  netmask 255.255.128.0
 EOT
-
-/etc/init.d/networking restart
