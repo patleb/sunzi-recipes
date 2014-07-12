@@ -10,7 +10,4 @@ else
 
   # install ruby-build
   git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-
-  # Makes rbenv command available
-  source ~/.bash_profile
 fi
