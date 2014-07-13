@@ -17,5 +17,12 @@ if [ ! -z "$private_ip" ]; then
   grep -q "^listen_addresses =" $file && sed "s/^listen_addresses = .*/listen_addresses = '$private_ip'/" -i $file || 
     sed "$ a\listen_addresses = '$private_ip'" -i $file
 
+  # allow access
+  file='/etc/postgresql/9.3/main/pg_hba.conf'
+  conf='host    all             all             all                     md5'
+  if [ ! grep -q "^$conf" $file]; then
+    sed "$ a\$conf" -i $file
+  fi
+
   service postgresql restart
 fi
