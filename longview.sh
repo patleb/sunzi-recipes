@@ -1,1 +1,1 @@
-curl -s https://lv.linode.com/<%= @attributes.longview_key %> | sudo bash
+curl -s "https://lv.linode.com/$(cat attributes/longview_key)" | sudo bash
