@@ -4,7 +4,7 @@ hostname=$(cat attributes/hostname)
 
 # Setup hosts
 cat>/etc/hosts <<EOT
-127.0.0.1 localhost.localdomain localhost
+127.0.0.1 localhost.local localhost
 ${public_ip} ${public_domain} ${hostname}
 
 # The following lines are desirable for IPv6 capable hosts
