@@ -4,8 +4,15 @@ else
   sudo apt-get install -y jq
 fi
 
-keys=$(jq -r .[] attributes/keys)
+keys=$(jq .[] attributes/keys)
 
-for key in "${keys[@]}"; do
-  grep -q -F "${key}" /root/.ssh/authorized_keys || echo "${key}" >> /root/.ssh/authorized_keys
+SAVEIFS=$IFS
+IFS=$(echo -en "\n\b")
+for key in ${keys[@]}; do
+  key="${key%\"}"
+  key="${key#\"}"
+  echo $key
+  echo '-'
+  grep -q -F "$key" /root/.ssh/authorized_keys || echo $key >> /root/.ssh/authorized_keys
 done
+IFS=$SAVEIFS
