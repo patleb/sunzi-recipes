@@ -3,5 +3,5 @@ if aptitude search '~i ^s3cmd$' | grep -q s3cmd; then
 else
   apt-get -y install s3cmd
 
-  mv ../files/.s3cmd /root/.s3cmd
+  mv ../files/.s3cfg /root/.s3cfg
 fi
