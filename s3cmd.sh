@@ -4,4 +4,4 @@ else
   apt-get -y install s3cmd
 fi
 
-mv files/.s3cfg /root/.s3cfg
+mv files/s3cfg /root/.s3cfg
