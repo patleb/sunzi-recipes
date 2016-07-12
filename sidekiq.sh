@@ -1,5 +1,5 @@
 if gem list | grep -q sidekiq; then
   echo 'sidekiq already installed, skipping.'
-else  
+else
   gem install sidekiq --no-rdoc --no-ri
 fi
