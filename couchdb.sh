@@ -6,7 +6,7 @@ if [ ! -d "/var/lib/couchdb" ]; then
   cd apache*
   ./configure
   make && sudo make install
-  sudo adduser --disabled-login --disabled-password --no-create-home --gecos "" couchdb
+  sudo adduser --disabled-login --disabled-password --no-create-home --gecos "" couchdb || true
   sudo chown -R couchdb:couchdb /usr/local/var/lib/couchdb
   sudo chown -R couchdb:couchdb /usr/local/var/log/couchdb
   sudo chown -R couchdb:couchdb /usr/local/var/run/couchdb
