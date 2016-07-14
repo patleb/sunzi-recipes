@@ -7,4 +7,4 @@ fi
 mv /etc/mysql/my.cnf /etc/mysql/my.cnf.back
 mv files/my.cnf /etc/mysql/my.cnf
 
-service mysql restart
+service mysql restart || true
