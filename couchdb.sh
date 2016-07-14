@@ -1,4 +1,4 @@
-if [ ! -d "/var/lib/couchdb" ]; then
+if [ ! -d "/usr/local/etc/couchdb" ]; then
   sudo apt-get update
   sudo apt-get -y install build-essential erlang-base-hipe erlang-dev erlang-manpages erlang-eunit erlang-nox libicu-dev libmozjs185-dev libcurl4-openssl-dev
   wget http://mirrors.advancedhosters.com/apache/couchdb/source/1.6.1/apache-couchdb-1.6.1.tar.gz
