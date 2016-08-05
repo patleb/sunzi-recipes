@@ -4,4 +4,5 @@ else
   apt-get -y install curl
 fi
 
+echo "https://lv.linode.com/$(cat attributes/longview_key)"
 curl -s "https://lv.linode.com/$(cat attributes/longview_key)" | sudo bash
