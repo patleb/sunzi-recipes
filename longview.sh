@@ -5,9 +5,9 @@ else
 fi
 
 longview_key=$(cat attributes/longview_key)
-if grep -Fxq "$longview_key" "/etc/linode/longview.key"; then
+if grep -q "$longview_key" "/etc/linode/longview.key"; then
   echo "Longview is setup with the correct key, skipping installation"
 else
   echo "Installing longview from https://lv.linode.com/$longview_key"
-  curl -s "https://lv.linode.com/$lonview_key" | sudo bash
+  curl -s "https://lv.linode.com/$longview_key" | sudo bash
 fi
