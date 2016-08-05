@@ -20,7 +20,7 @@ if [ ! -z "$private_ip" ]; then
   # allow access
   file='/etc/postgresql/9.3/main/pg_hba.conf'
   conf='host    all             all             all                     md5'
-  if [ ! grep -q "^$conf" $file]; then
+  if [ ! grep -q "^$conf" $file ]; then
     sed "$ a\$conf" -i $file
   fi
 fi
