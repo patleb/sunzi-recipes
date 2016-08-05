@@ -23,7 +23,7 @@ else
 fi
 
 if cmp -s files/pg_hba.conf /etc/postgresql/9.5/main/pg_hba.conf; then
-  echo "postgresql.conf file is identical, skipping copy"
+  echo "pg_hba.conf file is identical, skipping copy"
 else
   restart=true
 
