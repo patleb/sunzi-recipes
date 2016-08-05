@@ -5,6 +5,10 @@ else
 fi
 
 longview_key=$(cat attributes/longview_key)
+echo "$longview_key"
+tail /etc/linode/longview.key
+grep "$longview_key" "/etc/linode/longview.key"
+
 if grep -q "$longview_key" "/etc/linode/longview.key"; then
   echo "Longview is setup with the correct key, skipping installation"
 else
