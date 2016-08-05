@@ -4,7 +4,7 @@ else
   apt-get -y install curl
 fi
 
-longview_key = $(cat attributes/longview_key)
+longview_key=$(cat attributes/longview_key)
 if grep -Fxq "$longview_key" "/etc/linode/longview.key"; then
   echo "Longview is setup with the correct key, skipping installation"
 else
