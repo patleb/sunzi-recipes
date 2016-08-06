@@ -4,6 +4,12 @@ else
   sudo apt-get install -y jq
 fi
 
+if [ ! -d "/root/.ssh" ]; then
+  echo "Creating ssh directory for root"
+  mkdir /root/.ssh
+  touch /root/.ssh/authorized_keys
+fi
+
 keys=$(jq .[] attributes/keys)
 
 SAVEIFS=$IFS
