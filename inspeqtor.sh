@@ -4,6 +4,7 @@ else
   echo "Installing inspeqtor."
   curl -L https://bit.ly/InspeqtorDEB | bash # add inspeqtor repo
   apt-get install inspeqtor
+  mkdir -p /etc/inspeqtor/services.d/
 fi
 
 if pgrep "inspeqtor" > /dev/null; then

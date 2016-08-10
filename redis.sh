@@ -16,7 +16,6 @@ update-rc.d redis-server disable # disable init.d script for redis
 mv files/redis-upstart.conf /etc/init/redis-server.conf
 chown redis:root /etc/init/redis-server.conf
 # inspeqtor config
-mkdir -p /etc/inspeqtor/services.d
 mv files/redis-inspeqtor.inq /etc/inspeqtor/services.d/redis-server.inq
 
 initctl reload-configuration
