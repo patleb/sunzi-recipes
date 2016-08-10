@@ -20,4 +20,11 @@ mkdir -p /etc/inspeqtor/services.d
 mv files/redis-inspeqtor.inq /etc/inspeqtor/services.d/redis-server.inq
 
 initctl reload-configuration
-start redis-server
+
+if pgrep "redis-server" > /dev/null; then
+  echo "Redis running, restarting."
+  restart redis-server
+else
+  echo "Starting redis."
+  start redis-server
+fi
