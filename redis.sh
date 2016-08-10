@@ -8,7 +8,13 @@ else
   apt-get -y install redis-server
 fi
 
+# redis configuration
 rm /etc/redis/redis.conf
 mv files/redis.conf /etc/redis/redis.conf
+# upstart supervisor
+update-rc.d redis-server disable # disable init.d script for redis
+mv files/redis-upstart.conf /etc/init/redis-server.conf
+chown redis:root /etc/init/redis-server.conf
 
-service redis-server restart
+initctl reload-configuration
+start redis-server
