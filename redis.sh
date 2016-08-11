@@ -8,7 +8,22 @@ else
   apt-get -y install redis-server
 fi
 
+# redis configuration
 rm /etc/redis/redis.conf
 mv files/redis.conf /etc/redis/redis.conf
+# upstart supervisor
+update-rc.d redis-server disable # disable init.d script for redis
+mv files/redis-upstart.conf /etc/init/redis-server.conf
+chown redis:root /etc/init/redis-server.conf
+# inspeqtor config
+mv files/redis-inspeqtor.inq /etc/inspeqtor/services.d/redis-server.inq
 
-service redis-server restart
+initctl reload-configuration
+
+if pgrep "redis-server" > /dev/null; then
+  echo "Redis running, restarting."
+  restart redis-server
+else
+  echo "Starting redis."
+  start redis-server
+fi
