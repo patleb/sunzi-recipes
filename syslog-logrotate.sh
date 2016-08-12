@@ -18,18 +18,6 @@ cat >/etc/logrotate.d/rsyslog <<EOL
         endscript
 }
 
-/var/log/mail.info
-/var/log/mail.warn
-/var/log/mail.err
-/var/log/mail.log
-/var/log/daemon.log
-/var/log/kern.log
-/var/log/auth.log
-/var/log/user.log
-/var/log/lpr.log
-/var/log/cron.log
-/var/log/debug
-/var/log/messages
 EOL
 
 chown root:root /etc/logrotate.d/rsyslog
