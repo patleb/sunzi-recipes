@@ -5,7 +5,8 @@ mv files/nginx.conf /etc/nginx/nginx.conf
 
 hostname=$(cat attributes/hostname)
 cat >/etc/logrotate.d/nginx <<EOL
-/var/log/nginx/*.log {
+/var/log/nginx/*.log
+{
         weekly
         missingok
         rotate 4
