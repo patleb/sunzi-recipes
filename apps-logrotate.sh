@@ -4,7 +4,7 @@
 # want to override this if it is already there.
 
 cat >/etc/logrotate.d/apps-logrotate <<EOL
-/var/www/*/shared/log/*log
+/var/www/*/shared/log/*log {
   rotate 3
   daily
   compress
