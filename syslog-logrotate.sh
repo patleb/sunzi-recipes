@@ -13,9 +13,9 @@ cat >/etc/logrotate.d/rsyslog <<EOL
         delaycompress
         compress
         postrotate
-                reload rsyslog >/dev/null 2>&1 || true
+                reload rsyslog >/dev/null 2>&1 || true \
 
-                /usr/bin/s3cmd -m text/plain sync /var/log/syslog.2.gz s3://platform-server-logs/${hostname}/syslog.$(date +"%Y%m%d").gz
+                /usr/bin/s3cmd -m text/plain sync /var/log/syslog.2.gz s3://platform-server-logs/${hostname}/syslog.$(date +"%Y%m%d").gz \
         endscript
 }
 
