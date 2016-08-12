@@ -36,6 +36,8 @@ cat >/etc/sensu/conf.d/transport.json <<EOL
 }
 EOL
 
+sensu-install -p process-checks:0.0.6
+
 cp files/sensu-client.json /etc/sensu/conf.d/client.json
 
 update-rc.d sensu-client defaults
