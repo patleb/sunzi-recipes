@@ -21,10 +21,9 @@ cat >/etc/logrotate.d/nginx <<EOL
                 fi \
         endscript
         postrotate
-                invoke-rc.d nginx rotate >/dev/null 2>&1; \
-
-                /usr/bin/s3cmd -m text/plain sync /var/log/nginx/access.log.1.gz s3://platform-server-logs/${hostname}/nginx.access.log.$(date +"%Y%m%d").gz; \
-                /usr/bin/s3cmd -m text/plain sync /var/log/nginx/error.log.1.gz s3://platform-server-logs/${hostname}/nginx.error.log.$(date +"%Y%m%d").gz; \
+                invoke-rc.d nginx rotate >/dev/null 2>&1
+                /usr/bin/s3cmd -m text/plain sync /var/log/nginx/access.log.1.gz s3://platform-server-logs/${hostname}/nginx.access.log.$(date +"%Y%m%d").gz
+                /usr/bin/s3cmd -m text/plain sync /var/log/nginx/error.log.1.gz s3://platform-server-logs/${hostname}/nginx.error.log.$(date +"%Y%m%d").gz
         endscript
 }
 EOL
