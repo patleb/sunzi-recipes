@@ -4,3 +4,4 @@
 # want to override this if it is already there.
 
 mv files/syslog-logrotate.conf /etc/logrotate.d/rsyslog
+chown root:root /etc/logrotate.d/rsyslog
