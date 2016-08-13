@@ -12,8 +12,8 @@ fi
 rm /etc/redis/redis.conf
 mv files/redis.conf /etc/redis/redis.conf
 # upstart supervisor
-rm /etc/init.d/redis-server # Remove the existing init script
 update-rc.d redis-server disable # disable init.d script for redis
+rm /etc/init.d/redis-server # Remove the existing init script
 
 # Create the upstart script for redis
 cat >/etc/init/redis-server.conf <<EOL
