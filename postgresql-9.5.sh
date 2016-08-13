@@ -22,6 +22,17 @@ else
   chown postgres /etc/postgresql/9.5/main/postgresql.conf
 fi
 
+if cmp -s files/pg_ident.conf /etc/postgresql/9.5/main/pg_ident.conf; then
+  echo "pp_ident.conf file is identical, skipping copy"
+else
+  restart=true
+
+  # Install configuration
+  rm /etc/postgresql/9.5/main/pg_ident.conf
+  mv files/postgresql.conf /etc/postgresql/9.5/main/pg_ident.conf
+  chown postgres /etc/postgresql/9.5/main/pg_ident.conf
+fi
+
 if cmp -s files/pg_hba.conf /etc/postgresql/9.5/main/pg_hba.conf; then
   echo "pg_hba.conf file is identical, skipping copy"
 else
@@ -38,5 +49,3 @@ if [ $restart = true ]; then
 else
   echo "No update, skipping postgres restart"
 fi
-
-
