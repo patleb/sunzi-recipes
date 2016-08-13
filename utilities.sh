@@ -16,6 +16,12 @@ else
   apt-get -y install curl
 fi
 
+if aptitude search '~i ^unzip$' | grep -q unzip; then
+  echo "unzip already installed, skipping."
+else
+  apt-get -y install unzip
+fi
+
 # if aptitude search '~i ^sysdig$' | grep -q sysdig; then
 #   echo "sysdig already installed, skipping."
 # else
