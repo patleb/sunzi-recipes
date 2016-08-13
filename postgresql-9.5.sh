@@ -29,7 +29,7 @@ else
 
   # Install configuration
   rm /etc/postgresql/9.5/main/pg_ident.conf
-  mv files/postgresql.conf /etc/postgresql/9.5/main/pg_ident.conf
+  mv files/pg_ident.conf /etc/postgresql/9.5/main/pg_ident.conf
   chown postgres /etc/postgresql/9.5/main/pg_ident.conf
 fi
 
