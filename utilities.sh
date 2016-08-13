@@ -10,6 +10,12 @@ else
   apt-get -y install mosh
 fi
 
+if aptitude search '~i ^curl$' | grep -q curl; then
+  echo "curl already installed, skipping."
+else
+  apt-get -y install curl
+fi
+
 # if aptitude search '~i ^sysdig$' | grep -q sysdig; then
 #   echo "sysdig already installed, skipping."
 # else
