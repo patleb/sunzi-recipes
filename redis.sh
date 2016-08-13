@@ -12,6 +12,7 @@ fi
 rm /etc/redis/redis.conf
 mv files/redis.conf /etc/redis/redis.conf
 # upstart supervisor
+rm /etc/init.d/redis-server # Remove the existing init script
 update-rc.d redis-server disable # disable init.d script for redis
 
 # Create the upstart script for redis
@@ -20,7 +21,6 @@ description "redis server"
 
 start on runlevel [23]
 stop on shutdown
-
 
 exec sudo -u redis /usr/bin/redis-server /etc/redis/redis.conf
 
