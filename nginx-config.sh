@@ -1,3 +1,7 @@
+#install inspeqtor conf
+mv files/nginx_inspeqtor.inq /etc/inspeqtor/services.d/nginx.inq
+initctl reload-configuration
+#install upstart conf
 mv files/nginx_upstart.conf /etc/init/nginx.conf
 update-rc.d nginx disable
 
