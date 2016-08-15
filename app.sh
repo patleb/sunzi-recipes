@@ -33,15 +33,6 @@ if [ ! -f $app_enabled ]; then
   ln -s $app_available $app_enabled
 fi
 
-# Test nginx config
-/etc/init.d/nginx configtest
-if [ $? -eq 0 ]; then
-  echo "nginx config test passed; restarting"
-  /etc/init.d/nginx restart
-else
-  echo "nginx config test failed; fix it"
-fi
-
 # Setup thin
 if [ "$app_server" == "thin" ]; then
   thin_conf=/etc/thin/$app_name.yml

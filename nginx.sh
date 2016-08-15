@@ -5,6 +5,12 @@ else
 
   # increase max size of server name
   sed -i "/server_names_hash_bucket_size/ s/# *//" /etc/nginx/nginx.conf
+fi
 
-  /etc/init.d/nginx start
+if pgrep "nginx" > /dev/null; then
+  echo "Nginx running, restarting."
+  restart nginx
+else
+  echo "Starting nginx."
+  start nginx
 fi
