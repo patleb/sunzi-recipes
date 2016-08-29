@@ -3,7 +3,10 @@ mv files/nginx_inspeqtor.inq /etc/inspeqtor/services.d/nginx.inq
 initctl reload-configuration
 #install upstart conf
 mv files/nginx_upstart.conf /etc/init/nginx.conf
+
+#disable init.d and delete init.d scripts
 update-rc.d nginx disable
+rm /etc/init.d/nginx
 
 rm -f /etc/nginx/nginx.conf
 rm -f /etc/logrotate.d/nginx
