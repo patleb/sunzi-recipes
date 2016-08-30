@@ -1,3 +1,10 @@
+# Installs Postgres 9.5
+#
+# Required Files:
+#
+# - postgres.conf
+# - postgres/pg_hba.conf
+
 restart=false
 if aptitude search '~i ^postgresql-9.5$' | grep -q postgresql-9.5; then
   echo "postgresql-9.5 already installed, skipping."
@@ -31,7 +38,7 @@ else
 
   # Enable client authentication
   rm /etc/postgresql/9.5/main/pg_hba.conf
-  mv files/pg_hba.conf /etc/postgresql/9.5/main/pg_hba.conf
+  mv files/postgres/pg_hba.conf /etc/postgresql/9.5/main/pg_hba.conf
   chown postgres /etc/postgresql/9.5/main/pg_hba.conf
 fi
 
