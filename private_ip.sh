@@ -2,6 +2,8 @@ public_ip=$(cat attributes/public_ip)
 public_gateway=$(cat attributes/public_gateway)
 private_ip=$(cat attributes/private_ip)
 
+echo "DEPRECATED: use the network-interfaces recipe instead"
+
 # Setup networking
 cat >/etc/network/interfaces <<EOT
 auto lo
