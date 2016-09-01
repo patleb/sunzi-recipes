@@ -15,7 +15,7 @@
 <% if @attributes.is_haproxy_master %>
 mv files/keepalived/haproxy-master.conf /etc/keepalived/hosts/haproxy.conf
 <% else %>
-mv files/keepalived/haproxy-standby /etc/keepalived/hosts/haproxy.conf
+mv files/keepalived/haproxy-standby.conf /etc/keepalived/hosts/haproxy.conf
 <% end %>
 
 if pgrep "keepalived" > /dev/null; then
