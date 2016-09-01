@@ -10,9 +10,9 @@ echo "DEPRECATED: hosts requires a host key with a list of hostnames"
 # Setup hosts
 cat>/etc/hosts <<EOT
 127.0.0.1 localhost.local localhost
-<%= @attributes.hosts.each do |hostname, info| %>
+<% @attributes.hosts.each do |hostname, info| %>
 <%= info['ip'] %> <%= info['domain'] %> <%= hostname %>
-<%= end %>
+<% end %>
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     localhost ip6-localhost ip6-loopback
