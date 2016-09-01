@@ -22,6 +22,12 @@ else
   apt-get -y install unzip
 fi
 
+if aptitude search '~i ^tmux$' | grep -q tmux; then
+  echo "tmux already installed, skipping."
+else
+  apt-get -y install tmux
+fi
+
 # if aptitude search '~i ^sysdig$' | grep -q sysdig; then
 #   echo "sysdig already installed, skipping."
 # else
