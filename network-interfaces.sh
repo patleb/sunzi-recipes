@@ -37,4 +37,4 @@ iface eth0:1 inet static
 <% end %>
 EOT
 
-/etc/init.d/networking restart
+echo "Reboot for network changes to take effect!"
