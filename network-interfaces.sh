@@ -36,3 +36,5 @@ iface eth0:1 inet static
   netmask 255.255.255.0
 <% end %>
 EOT
+
+/etc/init.d/networking restart
