@@ -13,7 +13,7 @@ echo "DEPRECATED: use rubies attribute rather than ruby_version"
 <% end %>
 
 <% (@attributes.rubies || []).each do |version| %>
-if [[ "$(rbenv version)" =~ <%= version %>* ]]; then
+if [[ "$(rbenv versions)" =~ <%= version %> ]]; then
   echo "ruby-<%= version %> already installed, skipping"
 else
   echo "Installing ruby-<%= version %>"
