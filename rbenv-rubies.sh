@@ -18,4 +18,12 @@ else
   echo "Installing ruby-<%= version %>"
   rbenv install <%= version %>
 fi
+
+rbenv shell <%= version %>
+if gem list | grep -q bundler; then
+  echo 'bundler already installed for ruby-<%= version %>, skipping.'
+else
+  gem install bundler
+  rbenv rehash
+fi
 <% end %>
