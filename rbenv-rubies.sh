@@ -3,6 +3,7 @@
 # Required Attributes
 #
 # rubies [Array<String>] a list of versions to install
+# global_ruby [String] verion that should be global
 
 # Makes rbenv command available
 source ~/.bash_profile
@@ -27,3 +28,5 @@ else
   rbenv rehash
 fi
 <% end %>
+
+rbenv global <%= @attributes.global_ruby %>
