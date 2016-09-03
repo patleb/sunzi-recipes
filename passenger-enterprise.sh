@@ -3,7 +3,7 @@ download_token=$(cat attributes/passenger_enterprise_download_token)
 if aptitude search '~i ^passenger-enterprise$' | grep -q passenger-enterprise; then
   echo "passenger-enterprise already installed, skipping."
 else
-  mv files/passenger-enterprise-license /etc/passenger-enterprise-license
+  mv files/passenger/enterprise-license /etc/passenger-enterprise-license
   chmod 644 /etc/passenger-enterprise-license
 
   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
