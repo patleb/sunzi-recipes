@@ -9,7 +9,7 @@
 #
 # - apps [Array<Hash>]
 
-<% @attributes.apps.each do |app| %>
+<% (@attributes.apps || []).each do |app| %>
   name=<%= app['name'] %>
   user="app-$name"
 
