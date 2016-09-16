@@ -13,7 +13,7 @@
   name=<%= app['name'] %>
   user="app-$name"
 
-  if grep $user /etc/passwd; then
+  if grep "^$user:" /etc/passwd; then
     echo "user $user already exists; skipping create"
   else
     adduser --disabled-password --gecos "" $user
