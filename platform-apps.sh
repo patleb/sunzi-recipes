@@ -32,7 +32,7 @@
   mkdir -p /var/www/$name/shared/tmp/pids
   mkdir -p /var/www/$name/shared/sources
   mv files/env/$name /var/www/$name/shared/.env
-  chown -R $user: /var/www/$name/shared
+  chown -R $user:$user /var/www/$name/shared
 
   # configure nginx
   mv files/nginx/$name.conf /etc/nginx/sites-enabled/$name.conf
