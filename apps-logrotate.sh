@@ -11,6 +11,7 @@ cat >/etc/logrotate.d/apps-logrotate <<EOL
   compress
   delaycompress
   sharedscripts
+  copytruncate
   postrotate
     /usr/bin/passenger-config restart-app / > /dev/null
   endscript
