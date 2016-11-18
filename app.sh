@@ -52,3 +52,16 @@ if [ "$app_server" == "thin" ]; then
 
   mv files/app-thin.yml $thin_conf
 fi
+
+# Setup thin to use upstart
+if [ "$app_server" == "thin" ]; then
+  upstart_conf=/etc/init/$app_name.conf
+
+  if [ -f $upstart_conf ]; then
+    rm $upstart_conf
+  fi
+
+  mv files/upstart/$app_name.conf $upstart_conf
+
+  service restart $app_name
+fi
