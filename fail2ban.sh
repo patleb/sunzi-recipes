@@ -7,7 +7,7 @@ fi
 cat >/etc/fail2ban/fail2ban.local <<EOL
 [Definition]
 
-loglevel = 3
+loglevel = WARNING
 logtarget = /var/log/fail2ban.log
 et = /var/run/fail2ban/fail2ban.sock
 pidfile = /var/run/fail2ban/fail2ban.pid
