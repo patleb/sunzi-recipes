@@ -1,3 +1,6 @@
+# Install aptitude
+apt-get -y install aptitude
+
 # Setup utlities
 source recipes/utilities.sh
 
