@@ -1,6 +1,9 @@
 # Install aptitude
 apt-get -y install aptitude
 
+# Install make
+source recipes/make.sh
+
 # Setup utlities
 source recipes/utilities.sh
 
